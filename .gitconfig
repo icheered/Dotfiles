@@ -7,3 +7,5 @@
     autoSetupRemote = true
 [pull]
 	rebase = true
+[safe]
+	directory = /etc/nixos/nixos-config
