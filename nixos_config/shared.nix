@@ -7,6 +7,7 @@
     ./modules/i3.nix
     ./modules/dotfiles.nix
     ./modules/zsh.nix
+    ./modules/services.nix
   ];
 
   # Allow unfree packages
@@ -37,6 +38,7 @@
     clipit
     variety
     numlockx
+    spotify
   ];
 
   # Any other configurations that don't fit into specific modules
