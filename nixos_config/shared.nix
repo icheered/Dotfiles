@@ -36,7 +36,6 @@
     xbindkeys
     flameshot
     clipit
-    variety
     numlockx
     spotify
   ];
