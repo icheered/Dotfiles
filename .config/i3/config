@@ -41,7 +41,7 @@ floating_modifier $mod
 bindsym Print exec --no-startup-id flameshot gui
 
 # start a terminal
-bindsym $mod+Return exec --no-startup-id i3-sensible-terminal --execute zsh 
+bindsym $mod+Return exec --no-startup-id kitty --execute zsh 
 
 # kill focused window
 bindsym $mod+shift+q kill
@@ -68,13 +68,6 @@ bindsym $mod+t exec --no-startup-id rofi -show window -display-window "Window : 
 bindsym F10 exec rofi -show window -display-window "Window : " -line-padding 4 \
                 -lines 10 -padding 50 -hide-scrollbar \
                 -show-icons -drun-icon-theme "Arc-X-D" -font "Terminus 12"
-
-# change focus
-#bindsym $mod+j focus left
-#bindsym $mod+k focus down
-#bindsym $mod+l focus up
-#bindsym $mod+semicolon focus right
-
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
@@ -104,9 +97,6 @@ bindsym $mod+f fullscreen toggle
 
 #set keymaps idk lol
 exec --no-startup-id "setxkbmap -option 'grp:alt_shift_toggle' -layout gb,tr"
-# change container layout (stacked, tabbed, toggle split)
-#bindsym $mod+s layout stacking
-#bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
@@ -191,29 +181,9 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-#bar {
-#        status_command i3status
-#}
-
-#bar {
-#    mode hide
-#    hidden_state hide
-#    tray_output none
-#}
-
 # You can also use any non-zero value if you'd like to have a border
 for_window [class=".*"] border pixel 1 
 
-# Gaps
-# This will be available in version 4.22 (check version using i3 -v)
-#gaps inner 0
-#gaps outer 0
-
-#borderradius 2
-
-# StackStorage
 # Background manager
 exec --no-startup-id variety
 # Clipboard manager
@@ -225,27 +195,8 @@ exec --no-startup-id polybar
 # XBindkeysRC
 exec --no-startup-id xbindkeys
 
-#exec --no-startup-id xmodmap /home/tjbakker/.Xmodmap
-
 # Numlock key on
 exec --no-startup-id numlockx on
-
-# Power Manager
-#exec --no-startup-id xfce4-power-manager --daemon
-
-# Keyboard Layout
-# exec --no-startup-id setxkbmap -model pc101 -layout us -variant altgr-intl
-
-
-
-# Set background to black
-#exec --no-startup-id xsetroot -solid "#000000"
-
-
-# Picom
-#exec picom --config ~/.config/picom/picom.conf
-#exec_always picom --corner-radius 10 --refresh-rate 144
-
 
 # Set colors from Xresources
 # # Change 'color7' and 'color2' to whatever colors you want i3 to use 
@@ -273,22 +224,8 @@ exec --no-startup-id xfce4-power-manager
 for_window [class="gnome-calculator" instance="gnome-calculator"] floating enable
 for_window [title="Figure *"] floating enable
 
-# Assign Workspaces:
-#assign [class="Chromium"] $ws1
-#assign [class="firefox"] $ws1
-#assign [class="Code"] $ws2
-#assign [class="Alacritty"] $ws2
-#assign [class="dolphin"] $ws3
-#for_window [class="Spotify"] move to workspace $ws4
-#assign [class="Gimp"] $ws5
-
 # i3lock 
-
 bindsym $mod+q exec sh /home/tjbakker/Scripts/i3lock 20 5 
-
-# brightness
-#bindsym XF86MonBrightnessUp exec light -A 20 # increase screen brightness
-#bindsym XF86MonBrightnessDown exec light -U 20 # decrease screen brightness
 
 exec --no-startup-id xinput set-prop 'ELAN2841:00 04F3:31AD Touchpad' 'libinput Accel Speed' 0.5
 exec --no-startup-id xinput set-prop 'ELAN2841:00 04F3:31AD Touchpad' 'libinput Accel Speed Default' 0.5
