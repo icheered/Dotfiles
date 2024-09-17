@@ -21,7 +21,7 @@ in
     # Create symlinks for .config files
     ln -sf /home/${username}/Dotfiles/.config/i3/config /home/${username}/.config/i3/config
     ln -sf /home/${username}/Dotfiles/.config/polybar/config.ini /home/${username}/.config/polybar/config.ini
-    ln -sf /home/${username}/Dotfiles/.config/espanso /home/${username}/.config/espanso
+    ln -sf /home/${username}/Dotfiles/.config/espanso /home/${username}/.config/
     # Set correct permissions
     chown -R ${username}:users /home/${username}
   '';

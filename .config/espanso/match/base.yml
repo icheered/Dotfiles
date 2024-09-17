@@ -8,7 +8,6 @@
 # Matches are substitution rules: when you type the "trigger" string
 # it gets replaced by the "replace" string.
 matches:
-
 # Print the current date
   - trigger: ";date"
     replace: "{{mydate}}"
@@ -23,4 +22,4 @@ matches:
 
   - trigger: ";phone"
     replace: "0613838306"
-
+  # And much more! For more information, visit the docs: https://espanso.org/docs/
