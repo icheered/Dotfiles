@@ -193,6 +193,7 @@ exec --no-startup-id xbindkeys
 exec --no-startup-id numlockx on
 
 exec_always --no-startup-id "if [ $(hostname) = 'NixOSDesktop' ]; then /home/tjbakker/Dotfiles/Scripts/desktop_screens.sh; fi"
+exec_always --no-startup-id setxkbmap us
 
 # Set colors from Xresources
 # # Change 'color7' and 'color2' to whatever colors you want i3 to use 
