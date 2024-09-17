@@ -1,0 +1,105 @@
+# For the benefit of emacs users: -*- shell-script -*-
+###########################
+# xbindkeys configuration #
+###########################
+#
+# Version: 1.8.6
+#
+# If you edit this file, do not forget to uncomment any lines
+# that you change.
+# The pound(#) symbol may be used anywhere for comments.
+#
+# To specify a key, you can use 'xbindkeys --key' or
+# 'xbindkeys --multikey' and put one of the two lines in this file.
+#
+# The format of a command line is:
+#    "command to start"
+#       associated key
+#
+#
+# A list of keys is in /usr/include/X11/keysym.h and in
+# /usr/include/X11/keysymdef.h
+# The XK_ is not needed.
+#
+# List of modifier:
+#   Release, Control, Shift, Mod1 (Alt), Mod2 (NumLock),
+#   Mod3 (CapsLock), Mod4, Mod5 (Scroll).
+#
+
+# The release modifier is not a standard X modifier, but you can
+# use it if you want to catch release events instead of press events
+
+# By defaults, xbindkeys does not pay attention with the modifiers
+# NumLock, CapsLock and ScrollLock.
+# Uncomment the lines above if you want to pay attention to them.
+
+#keystate_numlock = enable
+#keystate_capslock = enable
+#keystate_scrolllock= enable
+
+# Set mic volume to 100
+"amixer set Capture 100%"
+	Scroll_Lock
+
+# Take a screenshot
+#"flameshot gui"
+#	Mod4+Shift+s
+"flameshot gui"
+	Print
+"flameshot gui"
+	Mod4+Shift+s
+
+# Launch rofi
+"rofi -show drun -modi drun -theme glue_pro_blue"
+	Mod4+s
+
+# Play-Pause spotify
+"playerctl play-pause --player=spotify"
+	XF86AudioPlay
+
+# Next-track spotify
+"playerctl next --player=spotify"
+	XF86AudioNext
+
+# Previous-track spotify
+"playerctl previous --player=spotify"
+	XF86AudioPrev
+
+# Change background image with mod+shit+ +
+"variety --next"
+  Mod4+Shift+n 
+
+# Start HTOP
+"i3-sensible-terminal -x htop"
+  Control+Shift + Escape
+  
+# Start heater
+"/home/tjbakker/Scripts/StartHeater.sh" 
+Control+Shift+Mod2+Mod4+Control_L + 1
+
+# Start printer
+"/home/tjbakker/Scripts/StartPrinter.sh" 
+Control+Shift+Mod2+Mod4 + 2
+
+# Lock screen
+"/home/tjbakker/Scripts/lock.sh"
+  Mod4 + l
+
+# Lock Screen
+"/home/tjbakker/Scripts/lock.sh"
+  Mod4 + Escape
+
+# Suspend and lock screen
+"/home/tjbakker/Scripts/lock.sh && systemctl suspend"
+  Mod4 + Shift + Escape
+
+# Sleep
+"sudo systemctl suspend"
+  Control+Shift+Mod2+Mod4 + 8 
+
+"/home/tjbakker/Scripts/lock.sh"
+  Control+Shift+Mod2+Mod4 + 5 
+
+##################################
+# End of xbindkeys configuration #
+##################################

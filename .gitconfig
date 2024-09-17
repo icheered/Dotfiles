@@ -1,0 +1,9 @@
+[init]
+	defaultBranch = main
+[user]
+	email = tjeerd992@gmail.com
+	name = ICheered
+[push]
+    autoSetupRemote = true
+[pull]
+	rebase = true
