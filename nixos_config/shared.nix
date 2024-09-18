@@ -11,6 +11,8 @@ let
   moduleImports = importDir ./modules;
 
   # Import all .nix files from appimages directory
+  # Use these for any appimages that you want to be part of the nixos configuration
+  # Any single-use appimages or binaries can be run directly and don't have to be declared
   appimageImports = importDir ./appimages;
 in
 {
@@ -25,6 +27,7 @@ in
     firefox
     git
     i3
+    gnome.gnome-keyring
     gnome.gnome-tweaks
     gnome.dconf-editor
     polybar
@@ -48,6 +51,10 @@ in
     steam
     appimage-run
     obsidian
+  ];
+
+  programs.nix-ld.libraries = with pkgs; [
+    # Add any missing dynamic libraries for unpackages programs here
   ];
 
   # Any other configurations that don't fit into specific modules

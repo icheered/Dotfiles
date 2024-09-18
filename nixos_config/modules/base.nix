@@ -14,6 +14,8 @@ in
   hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
   services.blueman.enable = true;
 
+  # Allow executing pre-built binaries
+  programs.nix-ld.enable = true;
 
   # Set your time zone.
   time.timeZone = "Europe/Amsterdam";
