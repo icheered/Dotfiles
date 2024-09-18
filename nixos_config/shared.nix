@@ -48,6 +48,7 @@ in
     modrinth-app
     steam
     appimage-run
+    obsidian
   ];
 
   # Any other configurations that don't fit into specific modules
