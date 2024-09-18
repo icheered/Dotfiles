@@ -29,7 +29,7 @@ in
     gnome.dconf-editor
     polybar
     zsh
-w    zoxide
+    zoxide
     starship
     rofi
     kitty
