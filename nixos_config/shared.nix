@@ -1,20 +1,25 @@
-# shared.nix
 { config, pkgs, ... }:
 
+let
+  # Function to import all .nix files in a directory
+  importDir = dir: map (f: dir + "/${f}") (
+    builtins.filter (f: builtins.match ".*\\.nix" f != null) 
+      (builtins.attrNames (builtins.readDir dir))
+  );
+
+  # Import all .nix files from modules directory
+  moduleImports = importDir ./modules;
+
+  # Import all .nix files from appimages directory
+  appimageImports = importDir ./appimages;
+in
 {
-  imports = [
-    ./modules/base.nix
-    ./modules/i3.nix
-    ./modules/dotfiles.nix
-    ./modules/zsh.nix
-    ./modules/services.nix
-  ];
+  imports = moduleImports ++ appimageImports;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
   # List packages installed in system profile.
-  # This is placed here for easy access and frequent modifications
   environment.systemPackages = with pkgs; [
     vim
     firefox
@@ -34,14 +39,15 @@
     google-chrome
     espanso
     xbindkeys
-    flameshot # My favourite screenshotting tool
+    flameshot
     clipit
     numlockx
     spotify
     vscode
-    tree # Add the 'tree' command for the CLI
-    modrinth-app # A great minecraft launcher
+    tree
+    modrinth-app
     steam
+    appimage-run
   ];
 
   # Any other configurations that don't fit into specific modules
