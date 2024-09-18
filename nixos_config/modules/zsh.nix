@@ -14,12 +14,6 @@
     };
   };
 
-  # Add zsh plugins
-  programs.zsh.interactiveShellInit = ''
-    source ${pkgs.zsh-autosuggestions}/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-    source ${pkgs.zsh-syntax-highlighting}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-  '';
-
   # Set zsh as the default shell system-wide
   users.defaultUserShell = pkgs.zsh;
 }

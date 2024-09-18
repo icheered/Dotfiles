@@ -29,9 +29,8 @@ in
     gnome.dconf-editor
     polybar
     zsh
-    oh-my-zsh
-    zsh-autosuggestions
-    zsh-syntax-highlighting
+w    zoxide
+    starship
     rofi
     kitty
     ferdium
