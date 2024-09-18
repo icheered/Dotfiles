@@ -34,10 +34,14 @@
     google-chrome
     espanso
     xbindkeys
-    flameshot
+    flameshot # My favourite screenshotting tool
     clipit
     numlockx
     spotify
+    vscode
+    tree # Add the 'tree' command for the CLI
+    modrinth-app # A great minecraft launcher
+    steam
   ];
 
   # Any other configurations that don't fit into specific modules

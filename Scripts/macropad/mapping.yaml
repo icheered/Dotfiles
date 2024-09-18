@@ -1,0 +1,17 @@
+orientation: normal
+rows: 3
+columns: 4
+knobs: 2
+
+layers:
+  - buttons:
+      - ["mute", "prev", "play", "next"]
+      - ["ctrl-shift-win-1", "ctrl-shift-win-2", "<100>", "<100>"]
+      - ["ctrl-shift-win-3", "f12", "<100>", "ctrl-shift-win-4"]
+    knobs:
+      - ccw: "volumedown"
+        press: "mute"
+        cw: "volumeup"
+      - ccw: "ctrl-shift-win-5"
+        press: "ctrl-shift-win-6"
+        cw: "ctrl-shift-win-7"

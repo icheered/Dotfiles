@@ -17,12 +17,17 @@ in
     # Create .config directory if it doesn't exist
     mkdir -p /home/${username}/.config/i3
     mkdir -p /home/${username}/.config/polybar
+    mkdir -p /home/${username}/.confi/Code/User/snippets
 
     # Create symlinks for .config files
     ln -sf /home/${username}/Dotfiles/.config/i3/config /home/${username}/.config/i3/config
     ln -sf /home/${username}/Dotfiles/.config/polybar/config.ini /home/${username}/.config/polybar/config.ini
     ln -sf /home/${username}/Dotfiles/icheerd.zsh-theme /home/${username}/.oh-my-zsh/themes
     ln -sf /home/${username}/Dotfiles/.config/espanso /home/${username}/.config/
+    ln -sf /home/${username}/Dotfiles/.config/vscode/settings.json /home/${username}/.config/Code/User/settings.json
+    ln -sf /home/${username}/Dotfiles/.config/vscode/keybindings.json /home/${username}/.config/Code/User/keybindings.json
+    ln -sf /home/${username}/Dotfiles/.config/vscode/snippets /home/${username}/.config/Code/User/snippets
+
     # Set correct permissions
     chown -R ${username}:users /home/${username}
   '';

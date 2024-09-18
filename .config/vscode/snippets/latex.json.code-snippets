@@ -1,0 +1,129 @@
+{
+  // Place your snippets for latex here. Each snippet is defined under a snippet name and has a prefix, body and
+  // description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+  // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the
+  // same ids are connected.
+  "Standard Figure": {
+    "prefix": "figure",
+    "body": [
+      "\\begin{figure}[!htb]",
+      "\t\\centering",
+      "\t\\includegraphics[width=0.8\\linewidth]{${1:image.png}}",
+      "\t\\caption{${2:Awesome looking image}}",
+      "\t\\label{fig:${3:fany-label}}",
+      "\\end{figure}"
+    ],
+    "description": "Input a single figure"
+  },
+  "MultiColumnFigure": {
+    "prefix": "multifigure",
+    "body": [
+      "\\begin{figure}[!htb]",
+      "\t\\centering",
+      "\t\\begin{subfigure}[b]{0.45\\linewidth}",
+      "\t\t\\centering",
+      "\t\t\\includegraphics[width=\\textwidth]{$1}",
+      "\t\t\\caption{}",
+      "\t\t\\label{fig:$2}",
+      "\t\\end{subfigure}",
+      "\t\\hfill",
+      "\t\\begin{subfigure}[b]{0.45\\linewidth}",
+      "\t\t\\centering",
+      "\t\t\\includegraphics[width=\\textwidth]{$3}",
+      "\t\t\\caption{}",
+      "\t\t\\label{fig:$4}",
+      "\t\\end{subfigure}",
+      "\t\\caption{$5}",
+      "\t\\label{fig:$6}",
+      "\\end{figure}"
+    ],
+    "description": "Input multiple figures in a row"
+  },
+  "Code listing": {
+    "prefix": ["lstlisting", "code"],
+    "body": ["\\begin{lstlisting}[language=$1]", "$0", "\\end{lstlisting}"],
+    "description": "Insert code"
+  },
+  "Code listing from file": {
+    "prefix": ["lstinputlisting", "codeFromFile"],
+    "body": ["\\lstinputlisting[language=${1:Octave}]{$2}"],
+    "description": "Insert code from file"
+  },
+  "Document Outline": {
+    "prefix": "document",
+    "body": [
+      "\\documentclass[onecolumn]{IEEEtran}",
+      "\\usepackage[utf8]{inputenc}",
+      "\\usepackage[a4paper, margin=30mm]{geometry}",
+      "",
+      "\\usepackage{graphicx}",
+      "\\usepackage{booktabs}",
+      "\\usepackage{siunitx}",
+      "\\usepackage{amsmath}",
+      "\\usepackage{hyperref}",
+      "\\usepackage{lipsum}",
+      "\\usepackage{time}",
+      "",
+      "\\usepackage{caption}",
+      "\\usepackage{subcaption}",
+      "",
+      "\\usepackage{listings}",
+      "\\usepackage{color}",
+      "",
+      "\\definecolor{dkgreen}{rgb}{0,0.6,0}",
+      "\\definecolor{gray}{rgb}{0.5,0.5,0.5}",
+      "\\definecolor{mauve}{rgb}{0.58,0,0.82}",
+      "",
+      "\\lstset{frame=tb,",
+      "  aboveskip=3mm,",
+      "  belowskip=3mm,",
+      "  showstringspaces=false,",
+      "  columns=flexible,",
+      "  basicstyle={\\small\\ttfamily},",
+      "  numbers=none,",
+      "  numberstyle=\\tiny\\color{gray},",
+      "  keywordstyle=\\color{blue},",
+      "  commentstyle=\\color{dkgreen},",
+      "  stringstyle=\\color{mauve},",
+      "  breaklines=true,",
+      "  breakatwhitespace=true,",
+      "  tabsize=3",
+      "}",
+      "",
+      "\\newcommand{\\ra}[1]{\\renewcommand{\\arraystretch}{#1}}",
+      "\\newcommand{\\todo}[1]{{\\color{red} TODO: {#1}}}",
+      "",
+      "% \\usepackage{biblatex}",
+      "% \\addbibresource{sources.bib}",
+      "",
+      "\\title{Title}",
+      "\\author{Tjeerd Bakker (s2097966)}",
+      "\\date{\\today}",
+      "",
+      "\\begin{document}",
+      "\\maketitle",
+      "",
+      "",
+      "\\section{Introduction}",
+      "\\lipsum[2-4]",
+      "",
+      "% \\printbibliography",
+      "\\end{document}"
+    ],
+    "description": "Insert a template of a default latex document with relevant packages and my usual layout"
+  },
+  "Simple table": {
+    "prefix": "table",
+    "body": [
+      "\\begin{table}[!htb] \\centering",
+      "    \\begin{tabular}{cc} \\toprule",
+      "    Heading1 & Heading2 \\\\\\ \\midrule",
+      "    data & data \\\\\\",
+      "    \\bottomrule ",
+      "    \\end{tabular}",
+      "    \\caption{Caption}",
+      "\\end{table}"
+    ],
+    "description": "Simple table using the booktabs package"
+  }
+}

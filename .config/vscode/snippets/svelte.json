@@ -1,0 +1,38 @@
+{
+  "Script Block": {
+    "prefix": "script",
+    "body": [
+      "<script lang=\"ts\">",
+      "\t$0",
+      "</script>"
+    ],
+    "description": "Typescript script block"
+  },
+  "Svelte onclick event": {
+    "prefix": "onclick",
+    "body": [
+      "on:click={$1} on:keydown={$1}"
+    ],
+    "description": "Inserts on:click and on:keydown handlers"
+  },
+  "Svelte If-Else Block": {
+    "prefix": "ifsvelte",
+    "body": [
+      "{#if $1}",
+      "",
+      "{:else}",
+      "",
+      "{/if}"
+    ],
+    "description": "Svelte If-Else Block"
+  },
+  "Svelte Each Block": {
+    "prefix": "eachsvelte",
+    "body": [
+      "{#each $1 as $2}",
+      "\t$3",
+      "{/each}"
+    ],
+    "description": "Svelte Each Loop Block"
+  }
+}
