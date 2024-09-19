@@ -208,5 +208,8 @@
   "inference.custom.format": "codellama",
   "inference.maxTokens": 512,
   "inference.delay": 100,
-  "r.plot.useHttpgd": true
+  "r.plot.useHttpgd": true,
+  "[nix]": {
+    "editor.defaultFormatter": "brettm12345.nixfmt-vscode"
+  }
 }

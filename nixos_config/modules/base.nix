@@ -1,5 +1,5 @@
 # modules/base.nix
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 let
   username = "tjbakker";
 in
@@ -13,9 +13,6 @@ in
   hardware.bluetooth.enable = true; # enables support for Bluetooth
   hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
   services.blueman.enable = true;
-
-  # Allow executing pre-built binaries
-  programs.nix-ld.enable = true;
 
   # Set your time zone.
   time.timeZone = "Europe/Amsterdam";
@@ -73,4 +70,22 @@ in
 
   # This line prevents nix from messing with your Git repo
   environment.etc."/nixos/nixos-config/.git".enable = false;
+
+  # Enable nix-ld
+  programs.nix-ld.enable = true;
+
+  # Use mkForce to ensure our definitions take precedence
+  environment.variables = {
+    NIX_LD = lib.mkForce (lib.fileContents "${pkgs.stdenv.cc}/nix-support/dynamic-linker");
+    NIX_LD_LIBRARY_PATH = lib.mkForce (lib.makeLibraryPath [
+      # Add other libraries your binaries might need, for example:
+      pkgs.stdenv.cc.cc
+      pkgs.openssl
+      pkgs.zlib
+      # pkgs.glib
+      # pkgs.libGL
+    ]);
+  };
+
+
 }
