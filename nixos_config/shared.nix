@@ -2,10 +2,11 @@
 
 let
   # Function to import all .nix files in a directory
-  importDir = dir:
-    map (f: dir + "/${f}")
-    (builtins.filter (f: builtins.match ".*\\.nix" f != null)
-      (builtins.attrNames (builtins.readDir dir)));
+  importDir =
+    dir:
+    map (f: dir + "/${f}") (
+      builtins.filter (f: builtins.match ".*\\.nix" f != null) (builtins.attrNames (builtins.readDir dir))
+    );
 
   # Import all .nix files from modules directory
   moduleImports = importDir ./modules;
@@ -14,7 +15,8 @@ let
   # Use these for any appimages that you want to be part of the nixos configuration
   # Any single-use appimages or binaries can be run directly and don't have to be declared
   appimageImports = importDir ./appimages;
-in {
+in
+{
   imports = moduleImports ++ appimageImports;
 
   # Allow unfree packages
@@ -36,6 +38,7 @@ in {
     starship
 
     # System utilities
+    openssl
     rofi
     espanso
     xbindkeys
@@ -45,6 +48,7 @@ in {
     htop
     tree
     appimage-run # For running AppImages
+    direnv # Automatically load environment variables in directory
 
     # Development tools
     git
@@ -52,6 +56,7 @@ in {
     python3
     nodejs_22
     nodePackages.yarn
+    prisma-engines
 
     # Text editors and IDEs
     vim
@@ -70,11 +75,10 @@ in {
     modrinth-app # Minecraft launcher
   ];
 
-  programs.nix-ld.libraries = with pkgs;
-    [
-      # Add any missing dynamic libraries for unpackages programs here
-      zlib # Provides 'libz.so.1'
-    ];
+  programs.nix-ld.libraries = with pkgs; [
+    # Add any missing dynamic libraries for unpackages programs here
+    zlib # Provides 'libz.so.1'
+  ];
 
   # Any other configurations that don't fit into specific modules
   # or that you want to keep in the main file can go here
