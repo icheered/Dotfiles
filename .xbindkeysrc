@@ -66,7 +66,7 @@
 	XF86AudioPrev
 
 # Change background image with mod+shit+ +
-"variety --next"
+"/home/tjbakker/Dotfiles/Scripts/change_background.sh now"
   Mod4+Shift+n 
 
 # Start HTOP

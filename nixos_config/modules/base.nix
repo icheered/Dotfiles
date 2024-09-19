@@ -88,6 +88,12 @@ in
   # This line prevents nix from messing with your Git repo
   environment.etc."/nixos/nixos-config/.git".enable = false;
 
+  # Enable OpenGL, required for some graphics programs
+  hardware.opengl = {
+    enable = true;
+    extraPackages = with pkgs; [ rocmPackages.clr.icd ];
+  };
+
   # Enable nix-ld
   programs.nix-ld.enable = true;
 

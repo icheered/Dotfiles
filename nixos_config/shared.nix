@@ -28,6 +28,9 @@ in
     gnome.gnome-tweaks
     gnome.dconf-editor
     polybarFull
+    fuse # Filesystem in Userspace, includes often-needed dependencies
+    variety
+    feh
 
     # Terminal and shell
     kitty
@@ -47,10 +50,11 @@ in
     numlockx
     htop
     tree
-    appimage-run # For running AppImages
-    direnv # Automatically load environment variables in directory
+    appimage-run # For running AppImages and other applications!
     pulseaudio
+    direnv # Automatically load environment variables in directory
     playerctl # Media control
+    ncdu # Indexes the file system disk usage, very useful if system gets full
 
     # Development tools
     git
@@ -75,6 +79,7 @@ in
     spotify
     steam
     modrinth-app # Minecraft launcher
+    davinci-resolve
   ];
 
   programs.nix-ld.libraries = with pkgs; [
