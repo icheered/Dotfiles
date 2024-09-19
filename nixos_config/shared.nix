@@ -24,6 +24,7 @@ in
     # Window managers and desktop environments
     i3
     i3lock-fancy-rapid
+    picom # A compositor that allows transparent windows
     gnome.gnome-keyring
     gnome.gnome-tweaks
     gnome.dconf-editor

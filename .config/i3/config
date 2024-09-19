@@ -180,8 +180,16 @@ bindsym $mod+r mode "resize"
 # You can also use any non-zero value if you'd like to have a border
 for_window [class=".*"] border pixel 1 
 
+# i3-gaps specific configuration
+gaps inner 10
+gaps outer 5
+
+# Only enable gaps on a workspace when there is at least one container
+smart_gaps on
+
 # Background manager
 exec --no-startup-id variety
+
 # Clipboard manager
 exec --no-startup-id clipit
 
@@ -197,9 +205,7 @@ exec --no-startup-id numlockx on
 exec_always --no-startup-id "if [ $(hostname) = 'NixOSDesktop' ]; then /home/tjbakker/Dotfiles/Scripts/desktop_screens.sh; fi"
 exec_always --no-startup-id setxkbmap us
 exec_always --no-startup-id /home/tjbakker/Dotfiles/Scripts/change_background.sh
-
-
-
+exec_always --no-startup-id bash -c 'sleep 3 && picom -b'
 
 
 # Set colors from Xresources
@@ -220,10 +226,6 @@ set_from_resource $bg i3wm.color2 #f0f0f0
  client.placeholder      $bg     $bg     $fg  $bg       $bg
 #
 # client.background       $bg
-
-# Dunst
-exec --no-startup-id dunst
-exec --no-startup-id xfce4-power-manager
 
 for_window [class="gnome-calculator" instance="gnome-calculator"] floating enable
 for_window [title="Figure *"] floating enable

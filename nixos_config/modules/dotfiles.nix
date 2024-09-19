@@ -2,7 +2,7 @@
 { config, pkgs, ... }:
 
 let
-  username = "tjbakker"; 
+  username = "tjbakker";
 in
 {
   # Set up dotfiles
@@ -18,12 +18,14 @@ in
     mkdir -p /home/${username}/.config/i3
     mkdir -p /home/${username}/.config/polybar
     mkdir -p /home/${username}/.config/kitty
+    mkdir -p /home/${username}/.config/picom
     mkdir -p /home/${username}/.config/Code/User/snippets
 
     # Create symlinks for .config files
     ln -sf /home/${username}/Dotfiles/.config/i3/config /home/${username}/.config/i3/config
     ln -sf /home/${username}/Dotfiles/.config/polybar/config.ini /home/${username}/.config/polybar/config.ini
     ln -sf /home/${username}/Dotfiles/.config/kitty/kitty.conf /home/${username}/.config/kitty/kitty.conf
+    ln -sf /home/${username}/Dotfiles/.config/picom/picom.conf /home/${username}/.config/picom/picom.conf
     ln -sf /home/${username}/Dotfiles/.config/espanso /home/${username}/.config/
     ln -sf /home/${username}/Dotfiles/.config/vscode/settings.json /home/${username}/.config/Code/User/settings.json
     ln -sf /home/${username}/Dotfiles/.config/vscode/keybindings.json /home/${username}/.config/Code/User/keybindings.json
