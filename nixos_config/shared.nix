@@ -19,9 +19,6 @@ in
 {
   imports = moduleImports ++ appimageImports;
 
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
   # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
     # Window managers and desktop environments
@@ -29,7 +26,7 @@ in
     gnome.gnome-keyring
     gnome.gnome-tweaks
     gnome.dconf-editor
-    polybar
+    polybarFull
 
     # Terminal and shell
     kitty
@@ -39,6 +36,8 @@ in
 
     # System utilities
     openssl
+    wget
+    usbutils
     rofi
     espanso
     xbindkeys
@@ -49,6 +48,8 @@ in
     tree
     appimage-run # For running AppImages
     direnv # Automatically load environment variables in directory
+    pulseaudio
+    playerctl # Media control
 
     # Development tools
     git

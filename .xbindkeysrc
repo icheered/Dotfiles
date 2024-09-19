@@ -72,33 +72,30 @@
 # Start HTOP
 "i3-sensible-terminal -x htop"
   Control+Shift + Escape
-  
-# Start heater
-"/home/tjbakker/Scripts/StartHeater.sh" 
-Control+Shift+Mod2+Mod4+Control_L + 1
-
-# Start printer
-"/home/tjbakker/Scripts/StartPrinter.sh" 
-Control+Shift+Mod2+Mod4 + 2
 
 # Lock screen
-"/home/tjbakker/Scripts/lock.sh"
+"/home/tjbakker/Dotfiles/Scripts/lock.sh"
   Mod4 + l
-
-# Lock Screen
-"/home/tjbakker/Scripts/lock.sh"
-  Mod4 + Escape
-
+  
 # Suspend and lock screen
-"/home/tjbakker/Scripts/lock.sh && systemctl suspend"
+"/home/tjbakker/Dotfiles/Scripts/lock.sh && systemctl suspend"
   Mod4 + Shift + Escape
+
+# Start heater
+"/home/tjbakker/Dotfiles/Scripts/StartHeater.sh" 
+  m:0x55 + c:10
+
+# Start printer
+"/home/tjbakker/Dotfiles/Scripts/StartPrinter.sh" 
+  m:0x55 + c:11
 
 # Sleep
 "sudo systemctl suspend"
-  Control+Shift+Mod2+Mod4 + 8 
+  m:0x55 + c:17
 
-"/home/tjbakker/Scripts/lock.sh"
-  Control+Shift+Mod2+Mod4 + 5 
+# Lock
+"/home/tjbakker/Dotfiles/Scripts/lock.sh"
+  m:0x55 + c:14
 
 ##################################
 # End of xbindkeys configuration #

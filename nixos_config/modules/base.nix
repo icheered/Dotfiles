@@ -1,5 +1,10 @@
 # modules/base.nix
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 let
   username = "tjbakker";
 in
@@ -47,6 +52,12 @@ in
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
+  # Allow unfree packages
+  nixpkgs.config = {
+    allowUnfree = true;
+    allowUnfreePredicate = (_: true);
+  };
+
   # Enable sound with pipewire.
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
@@ -61,7 +72,13 @@ in
   users.users.${username} = {
     isNormalUser = true;
     description = "Tjeerd Bakker";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "dialout"
+      "users"
+      "audio"
+    ];
     shell = pkgs.zsh;
   };
 
@@ -74,18 +91,18 @@ in
   # Enable nix-ld
   programs.nix-ld.enable = true;
 
-  # Use mkForce to ensure our definitions take precedence
+  # Set environment variables system-wide
   environment.variables = {
     NIX_LD = lib.mkForce (lib.fileContents "${pkgs.stdenv.cc}/nix-support/dynamic-linker");
-    NIX_LD_LIBRARY_PATH = lib.mkForce (lib.makeLibraryPath [
-      # Add other libraries your binaries might need, for example:
-      pkgs.stdenv.cc.cc
-      pkgs.openssl
-      pkgs.zlib
-      # pkgs.glib
-      # pkgs.libGL
-    ]);
+    NIX_LD_LIBRARY_PATH = lib.mkForce (
+      lib.makeLibraryPath [
+        pkgs.stdenv.cc.cc
+        pkgs.openssl
+        pkgs.zlib
+        # Add other libraries your binaries might need, for example:
+        # pkgs.glib
+        # pkgs.libGL
+      ]
+    );
   };
-
-
 }
