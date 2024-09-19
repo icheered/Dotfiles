@@ -81,21 +81,34 @@
 "/home/tjbakker/Dotfiles/Scripts/lock.sh && systemctl suspend"
   Mod4 + Shift + Escape
 
+
+#
+# MACROPAD CONFIGURATION
+#
+
 # Start heater
-"/home/tjbakker/Dotfiles/Scripts/StartHeater.sh" 
-  m:0x55 + c:10
+"wget -O /dev/null http://192.168.5.113/cm\?cmnd\=Power%20TOGGLE"
+  Control+Shift+Mod2+Mod4+Control_L + 1
 
 # Start printer
-"/home/tjbakker/Dotfiles/Scripts/StartPrinter.sh" 
-  m:0x55 + c:11
+"wget -O /dev/null http://192.168.5.112/cm\?cmnd\=Power%20TOGGLE" 
+  Control+Shift+Mod2+Mod4 + 2
+
+# Lock (i3lock-fancy-rapid blurs the background which looks cool)
+"i3lock-fancy-rapid 20 5"
+  Control+Shift+Mod2+Mod4 + 3
 
 # Sleep
-"sudo systemctl suspend"
-  m:0x55 + c:17
-
-# Lock
-"/home/tjbakker/Dotfiles/Scripts/lock.sh"
-  m:0x55 + c:14
+"i3lock-fancy-rapid 20 5 && systemctl suspend"
+  Control+Shift+Mod2+Mod4 + 4
+  
+# Lights stuff
+"wget -O /dev/null http://192.168.5.114/decrease"
+  Control+Shift+Mod2+Mod4 + 5
+"wget -O /dev/null  http://192.168.5.114/toggle"
+  Control+Shift+Mod2+Mod4 + 6
+"wget -O /dev/null http://192.168.5.114/increase"
+  Control+Shift+Mod2+Mod4 + 7
 
 ##################################
 # End of xbindkeys configuration #

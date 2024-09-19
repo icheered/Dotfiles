@@ -23,6 +23,7 @@ in
   environment.systemPackages = with pkgs; [
     # Window managers and desktop environments
     i3
+    i3lock-fancy-rapid
     gnome.gnome-keyring
     gnome.gnome-tweaks
     gnome.dconf-editor
