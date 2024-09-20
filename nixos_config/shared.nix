@@ -30,6 +30,7 @@ in
     gnome.dconf-editor
     polybarFull
     fuse # Filesystem in Userspace, includes often-needed dependencies
+    glib # Includes often-needed dependencies
     variety
     feh
 
@@ -81,6 +82,7 @@ in
     steam
     modrinth-app # Minecraft launcher
     davinci-resolve
+    obsidian
   ];
 
   programs.nix-ld.libraries = with pkgs; [
