@@ -57,6 +57,7 @@ in
     direnv # Automatically load environment variables in directory
     playerctl # Media control
     ncdu # Indexes the file system disk usage, very useful if system gets full
+    rm-improved # A better 'rm' 
 
     # Development tools
     git
@@ -65,6 +66,8 @@ in
     nodejs_22
     nodePackages.yarn
     prisma-engines
+    nodePackages.live-server
+    heroku
 
     # Text editors and IDEs
     vim
@@ -83,6 +86,7 @@ in
     modrinth-app # Minecraft launcher
     davinci-resolve
     obsidian
+    bambu-studio
   ];
 
   programs.nix-ld.libraries = with pkgs; [

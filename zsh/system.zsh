@@ -9,7 +9,7 @@ alias .5='cd ../../../../..' # five dirs up
 # file & dirs
 alias cp='cp -iv'           # cp: interactive; verbose
 alias mv='mv -iv'           # mv: interactive; verbose
-alias rm='rm -iv'           # rm: interactive; verbose
+alias rm='echo USE RIP INSTEAD'           # rm: interactive; verbose
 alias mkdir='mkdir -pv'     # mkdir: parents; verbose
 
 # Better defaults
