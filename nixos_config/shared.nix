@@ -57,17 +57,23 @@ in
     direnv # Automatically load environment variables in directory
     playerctl # Media control
     ncdu # Indexes the file system disk usage, very useful if system gets full
-    rm-improved # A better 'rm' 
+    rm-improved # A better 'rm', adds the 'rip' command
+    lsof # Allows scanning for currently open ports
 
     # Development tools
     git
     jdk21_headless # Java Development Kit
     python3
-    nodejs_22
-    nodePackages.yarn
-    prisma-engines
     nodePackages.live-server
     heroku
+
+    # A bunch of stuff to get prisma to work...
+    nodePackages.yarn
+    nodePackages_latest.pnpm
+    nodePackages_latest.vercel
+    nodePackages_latest.prisma
+    openssl
+    nodejs_22
 
     # Text editors and IDEs
     vim
