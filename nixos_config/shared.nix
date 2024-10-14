@@ -69,6 +69,7 @@ in
     git
     jdk21_headless # Java Development Kit
     python3
+    poetry
     nodePackages.live-server
     heroku
 

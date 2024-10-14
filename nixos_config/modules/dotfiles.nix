@@ -27,6 +27,7 @@ in
     ln -sf /home/${username}/Dotfiles/.config/kitty/kitty.conf /home/${username}/.config/kitty/kitty.conf
     ln -sf /home/${username}/Dotfiles/.config/picom/picom.conf /home/${username}/.config/picom/picom.conf
     ln -sf /home/${username}/Dotfiles/.config/espanso /home/${username}/.config/
+    ln -sf /home/${username}/Dotfiles/.config/pypoetry/config.toml /home/${username}/.config/pypoetry/config.toml
     ln -sf /home/${username}/Dotfiles/.config/vscode/settings.json /home/${username}/.config/Code/User/settings.json
     ln -sf /home/${username}/Dotfiles/.config/vscode/keybindings.json /home/${username}/.config/Code/User/keybindings.json
     ln -sf /home/${username}/Dotfiles/.config/vscode/snippets /home/${username}/.config/Code/User/snippets
