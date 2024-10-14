@@ -18,6 +18,7 @@ let
 in
 {
   imports = moduleImports ++ appimageImports;
+  programs.steam.enable = true;
 
   # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
@@ -51,6 +52,7 @@ in
     clipit
     numlockx
     htop
+    nvtopPackages.full
     tree
     appimage-run # For running AppImages and other applications!
     pulseaudio
@@ -59,6 +61,9 @@ in
     ncdu # Indexes the file system disk usage, very useful if system gets full
     rm-improved # A better 'rm', adds the 'rip' command
     lsof # Allows scanning for currently open ports
+    speedtest-cli
+    vlc
+    ffmpeg
 
     # Development tools
     git

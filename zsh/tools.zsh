@@ -4,8 +4,6 @@ alias caddyreload='docker-compose exec caddy caddy reload -config /etc/caddy/Cad
 
 # Power
 alias power='echo Power usage: $(( $(cat /sys/class/power_supply/BAT0/power_now) / 1000 )) mW'
-alias hours='python3 ~/Scripts/hours.py'
-alias herokuenv='python3 ~/Scripts/parseHerokuEnv.py'
 
 # Docker
 alias dcm='docker-compose'
