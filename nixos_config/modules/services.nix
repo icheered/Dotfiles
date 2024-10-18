@@ -8,6 +8,15 @@ let
   username = "tjbakker";
 in
 {
+
+  services.openssh = {
+    enable = true;
+    settings = {
+      PermitRootLogin = "no";
+      PasswordAuthentication = false;
+    };
+  };
+
   systemd.user.services.espanso = {
     description = "Espanso text expander";
     wantedBy = [ "default.target" ];

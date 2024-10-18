@@ -64,6 +64,8 @@ in
     speedtest-cli
     vlc
     ffmpeg
+    redshift # Make screen orange
+    geoclue2
 
     # Development tools
     git
@@ -72,6 +74,9 @@ in
     poetry
     nodePackages.live-server
     heroku
+    gcc
+    stdenv.cc.cc.lib
+    zlib
 
     # A bunch of stuff to get prisma to work...
     nodePackages.yarn
@@ -103,8 +108,17 @@ in
 
   programs.nix-ld.libraries = with pkgs; [
     # Add any missing dynamic libraries for unpackages programs here
-    zlib # Provides 'libz.so.1'
+    #zlib # Provides 'libz.so.1'
   ];
+
+  environment.variables = {
+    LD_LIBRARY_PATH = "${
+      pkgs.lib.makeLibraryPath [
+        pkgs.stdenv.cc.cc.lib
+        pkgs.zlib
+      ]
+    }:$LD_LIBRARY_PATH";
+  };
 
   # Any other configurations that don't fit into specific modules
   # or that you want to keep in the main file can go here
