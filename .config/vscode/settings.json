@@ -211,5 +211,9 @@
   "r.plot.useHttpgd": true,
   "[nix]": {
     "editor.defaultFormatter": "brettm12345.nixfmt-vscode"
-  }
+  },
+  "cmake.pinnedCommands": [
+    "workbench.action.tasks.configureTaskRunner",
+    "workbench.action.tasks.runTask"
+  ]
 }

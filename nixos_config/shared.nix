@@ -66,6 +66,11 @@ in
     ffmpeg
     redshift # Make screen orange
     geoclue2
+    killall
+    epson-escpr
+    gutenprint
+    traceroute
+    rpi-imager
 
     # Development tools
     git
@@ -77,6 +82,9 @@ in
     gcc
     stdenv.cc.cc.lib
     zlib
+    python311Packages.xlib # X11 interface library
+    nodejs_18
+    nodejs_20
 
     # A bunch of stuff to get prisma to work...
     nodePackages.yarn

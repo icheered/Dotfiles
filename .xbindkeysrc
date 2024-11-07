@@ -105,8 +105,10 @@
 # Lights stuff
 "wget -O /dev/null http://192.168.5.114/decrease"
   Control+Shift+Mod2+Mod4 + 5
-"wget -O /dev/null  http://192.168.5.114/toggle"
+#"wget -O /dev/null  http://192.168.5.114/toggle"
+"~/Dotfiles/Scripts/toggle_lights.sh"
   Control+Shift+Mod2+Mod4 + 6
+
 "wget -O /dev/null http://192.168.5.114/increase"
   Control+Shift+Mod2+Mod4 + 7
 
