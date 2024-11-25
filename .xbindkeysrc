@@ -112,6 +112,9 @@
 "wget -O /dev/null http://192.168.5.114/increase"
   Control+Shift+Mod2+Mod4 + 7
 
+"~/Dotfiles/Scripts/./edit_last_whatsapp.sh"
+  Control+Shift+Alt + e
+
 ##################################
 # End of xbindkeys configuration #
 ##################################

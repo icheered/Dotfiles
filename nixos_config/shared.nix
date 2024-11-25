@@ -71,6 +71,7 @@ in
     gutenprint
     traceroute
     rpi-imager
+    xdotool
 
     # Development tools
     git
