@@ -1,219 +1,200 @@
 {
-  "terminal.integrated.tabs.enabled": false,
-  "editor.minimap.enabled": false,
-  "js/ts.implicitProjectConfig.experimentalDecorators": true,
-  "redhat.telemetry.enabled": false,
-  "blockman.n01LineHeight": 0,
-  "workbench.colorCustomizations": {
-    "editor.lineHighlightBackground": "#1073cf2d",
-    "editor.lineHighlightBorder": "#9fced11f"
-  },
-  "editor.wordWrap": "on",
-  "diffEditor.wordWrap": "off",
-  "editor.guides.indentation": false,
-  "editor.guides.bracketPairs": false,
-  "editor.inlayHints.enabled": "off",
-  "explorer.confirmDragAndDrop": false,
-  "editor.formatOnSave": true,
-  "terminal.integrated.enableMultiLinePasteWarning": false,
-  "terminal.external.linuxExec": "zsh",
-  "terminal.integrated.defaultProfile.linux": "zsh",
-  "editor.inlineSuggest.enabled": true,
-  "todohighlight.isEnable": true,
-  "todohighlight.isCaseSensitive": false,
-  "todohighlight.keywords": [
-    "DEBUG:",
-    "REVIEW:",
-    {
-      "text": " NOTE:",
-      "color": "white",
-      "backgroundColor": "#339900",
-      "overviewRulerColor": "#339900"
-    },
-    {
-      "text": " HACK:",
-      "color": "#ffffff",
-      "backgroundColor": "#006199"
-    },
-    {
-      "text": " BUG:",
-      "color": "white",
-      "backgroundColor": "#990000"
-    },
-    {
-      "text": " TODO:",
-      "color": "black",
-      "backgroundColor": "#ffab00",
-      "overviewRulerColor": "#ffab00",
-      "border": "1px solid #eee"
-    }
-  ],
-  "todohighlight.defaultStyle": {
-    "borderRadius": "2px",
-    "isWholeLine": true,
-    "color": "black",
-    "backgroundColor": "yellow"
-  },
-  "todohighlight.maxFilesForSearch": 5120,
-  "todohighlight.toggleURI": false,
-  "svelte.enable-ts-plugin": true,
-  "svelte.plugin.svelte.note-new-transformation": false,
-  "codetogether.virtualCursorJoin": "ownVirtualCursor",
-  "codetogether.userName": "Tjeerd",
   "jupyter.widgetScriptSources": ["jsdelivr.com", "unpkg.com"],
-  "workbench.editor.labelFormat": "short",
-  "auto-build.defaultEnv.name": "STM32F103RC_btt",
-  "[cpp]": {
-    "editor.defaultFormatter": "ms-vscode.cpptools"
-  },
-  "github.copilot.enable": {
-    "*": true,
-    "plaintext": false,
-    "markdown": true,
-    "scminput": false,
-    "yaml": true
-  },
-  "[python]": {
-    "editor.defaultFormatter": "ms-python.black-formatter",
-    "editor.formatOnSave": true,
-    "editor.codeActionsOnSave": {
-      "source.organizeImports": "explicit"
-    }
-  },
-  "isort.args": ["--profile", "black"],
-  "explorer.compactFolders": false,
-  "emmet.preferences": {},
-  "emmet.syntaxProfiles": {},
-  "emmet.includeLanguages": {
-    "typescript": "svelte"
-  },
+  "editor.inlineSuggest.enabled": true,
+  "files.autoSave": "onFocusChange",
+  "editor.minimap.enabled": false,
   "[typescript]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
   },
-  "latex-workshop.latex.tools": [
-    {
-      "name": "latexmk",
-      "command": "latexmk",
-      "args": [
-        "-synctex=1",
-        "-interaction=nonstopmode",
-        "-file-line-error",
-        "-pdf",
-        "-outdir=%OUTDIR%",
-        "%DOC%"
-      ],
-      "env": {}
-    },
-    {
-      "name": "xelatex",
-      "command": "xelatex",
-      "args": [
-        "-synctex=1",
-        "-interaction=nonstopmode",
-        "-file-line-error",
-        "-shell-escape",
-        "%DOC%"
-      ],
-      "env": {}
-    },
-    {
-      "name": "pdflatex",
-      "command": "pdflatex",
-      "args": [
-        "-synctex=1",
-        "-interaction=nonstopmode",
-        "-file-line-error",
-        "%DOC%"
-      ],
-      "env": {}
-    },
-    {
-      "name": "bibtex",
-      "command": "bibtex",
-      "args": ["%DOCFILE%"],
-      "env": {}
+  "svelte.plugin.svelte.note-new-transformation": false,
+  "workbench.editor.labelFormat": "short",
+  "explorer.compactFolders": false,
+  "[svelte]": {
+    "editor.defaultFormatter": "svelte.svelte-vscode"
+  },
+  "editor.formatOnSave": true,
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "json.format.enable": false,
+  "security.workspace.trust.untrustedFiles": "open",
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "svelte.enable-ts-plugin": true,
+  "terminal.integrated.enableMultiLinePasteWarning": false,
+  "[python]": {
+    "editor.formatOnType": true,
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  },
+  "[vue]": {
+    "editor.defaultFormatter": "Vue.volar"
+  },
+  "[csharp]": {
+    "editor.defaultFormatter": "ms-dotnettools.csharp"
+  },
+  "editor.rulers": [80],
+  "explorer.confirmDragAndDrop": false,
+  "notebook.cellToolbarLocation": {
+    "default": "right",
+    "jupyter-notebook": "left"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "files.exclude": {
+    "**/*.aux": true,
+    "**/*.cs.meta": true,
+    "**/*.toc": true
+  },
+  "github.copilot.enable": {
+    "*": false,
+    "plaintext": true,
+    "markdown": true,
+    "scminput": false,
+    "yaml": false
+  },
+  "terminal.external.osxExec": "zsh",
+  "terminal.integrated.profiles.linux": {
+    "Flatpak Escape": {
+      "path": "flatpak-spawn",
+      "args": ["--host", "toolbox", "run", "zsh"]
     }
-  ],
+  },
+  "terminal.integrated.defaultProfile.linux": "Flatpak Escape",
+  "editor.codeLensFontFamily": "Fira Code",
+  "editor.fontFamily": "'Fira Code', 'monospace', monospace",
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "liveshare.notebooks.allowGuestExecuteCells": true,
+  "nrf-connect.enableTelemetry": false,
+  "cmake.configureOnOpen": false,
   "latex-workshop.latex.recipes": [
     {
       "name": "xelatex",
       "tools": ["xelatex"]
     },
     {
-      "name": "pdfLaTeX",
-      "tools": ["pdflatex"]
-    },
-    {
-      "name": "latexmk 🔃",
+      "name": "latexmk",
       "tools": ["latexmk"]
     },
     {
-      "name": "pdflatex ➞ bibtex ➞ pdflatex`×2",
+      "name": "latexmk (latexmkrc)",
+      "tools": ["latexmk_rconly"]
+    },
+    {
+      "name": "latexmk (lualatex)",
+      "tools": ["lualatexmk"]
+    },
+    {
+      "name": "latexmk (xelatex)",
+      "tools": ["xelatexmk"]
+    },
+    {
+      "name": "pdflatex -> bibtex -> pdflatex * 2",
       "tools": ["pdflatex", "bibtex", "pdflatex", "pdflatex"]
     },
     {
-      "name": "xelatex ➞ bibtex ➞ xelatex`×2",
-      "tools": ["xelatex", "bibtex", "xelatex", "xelatex"]
+      "name": "Compile Rnw files",
+      "tools": ["rnw2tex", "latexmk"]
+    },
+    {
+      "name": "Compile Jnw files",
+      "tools": ["jnw2tex", "latexmk"]
+    },
+    {
+      "name": "Compile Pnw files",
+      "tools": ["pnw2tex", "latexmk"]
+    },
+    {
+      "name": "tectonic",
+      "tools": ["tectonic"]
     }
   ],
-  "files.exclude": {
-    "**/.aux": true,
-    "**/*.aux": true
-  },
-  "[html]": {
-    "editor.defaultFormatter": "vscode.html-language-features"
-  },
-  "[javascript]": {
-    "editor.defaultFormatter": "vscode.typescript-language-features"
-  },
-  "[matlab]": {
-    "editor.defaultFormatter": "AffenWiesel.matlab-formatter"
-  },
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[java]": {
-    "editor.defaultFormatter": "redhat.java"
-  },
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "vscode.typescript-language-features"
-  },
-  "[vue]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
+  "latex-workshop.latex.recipe.default": "lastUsed",
+  "latex-workshop.latex.tools": [
+    {
+        "name": "pdflatex",
+        "command": "pdflatex",
+        "args": [
+            "-synctex=1",
+            "-interaction=nonstopmode",
+            "-file-line-error",
+            "%DOC%"
+        ]
+    },
+    {
+        "name": "xelatex",
+        "command": "xelatex",
+        "args": [
+            "-synctex=1",
+            "-interaction=nonstopmode",
+            "-file-line-error",
+            "%DOC%"
+        ]
+    },
+    {
+        "name": "latexmk",
+        "command": "latexmk",
+        "args": [
+            "-synctex=1",
+            "-interaction=nonstopmode",
+            "-file-line-error",
+            "-pdf",
+            "-outdir=%OUTDIR%",
+            "%DOC%"
+        ]
+    },
+    {
+        "name": "bibtex",
+        "command": "bibtex",
+        "args": [
+            "%DOCFILE%"
+        ]
+    },
+    {
+        "name": "biber",
+        "command": "biber",
+        "args": [
+            "%DOCFILE%"
+        ]
+    }
+],
   "rest-client.previewOption": "exchange",
-  "javascript.updateImportsOnFileMove.enabled": "never",
-  "terminal.integrated.scrollback": 10000,
-  "jupyter.askForKernelRestart": false,
-  "[svelte]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "editor.defaultFormatter": "ms-python.python",
+  "rust-analyzer.checkOnSave.command": "clippy",
+  "rust-analyzer.check.overrideCommand": null,
+  "[rust]": {
+    "editor.defaultFormatter": "rust-lang.rust-analyzer"
   },
-  "files.autoSave": "onFocusChange",
-  "workbench.tree.enableStickyScroll": true,
-  "security.workspace.trust.untrustedFiles": "open",
-  "glassit.alpha": 235,
+  "explorer.confirmPasteNative": false,
+  "git.openRepositoryInParentFolders": "always",
+  "workbench.colorTheme": "Default Dark+",
+  "jupyter.askForKernelRestart": false,
+  "[cpp]": {
+    "editor.defaultFormatter": "ms-vscode.cpptools"
+  },
+  "glassit.alpha": 255,
   "explorer.confirmDelete": false,
-  "json.format.enable": false,
-  "prisma.showPrismaDataPlatformNotification": false,
-  "workbench.editor.revealIfOpen": true,
+  "[latex]": {
+    "editor.defaultFormatter": "James-Yu.latex-workshop"
+  },
+  "latex-workshop.latex.autoClean.run": "onSucceeded",
+  "latex-workshop.latex.recipe.default": "lastUsed",
   "supermaven.enable": {
     "*": true
   },
-  "explorer.confirmPasteNative": false,
-  "cmake.showOptionsMovedNotification": false,
-  "inference.model": "codellama:7b-code-q4_K_S",
-  "inference.custom.format": "codellama",
-  "inference.maxTokens": 512,
-  "inference.delay": 100,
-  "r.plot.useHttpgd": true,
-  "[nix]": {
-    "editor.defaultFormatter": "brettm12345.nixfmt-vscode"
+  "prisma.showPrismaDataPlatformNotification": false,
+  "editor.wordWrap": "on",
+  "[bibtex]": {
+    "editor.defaultFormatter": "James-Yu.latex-workshop"
   },
-  "cmake.pinnedCommands": [
-    "workbench.action.tasks.configureTaskRunner",
-    "workbench.action.tasks.runTask"
-  ]
+  "extensions.ignoreRecommendations": true,
+  "[nix]": {
+    "editor.defaultFormatter": "jnoortheen.nix-ide"
+  },
 }

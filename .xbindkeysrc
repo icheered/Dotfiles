@@ -91,7 +91,7 @@
   Control+Shift+Mod2+Mod4+Control_L + 1
 
 # Start printer
-"wget -O /dev/null http://192.168.5.112/cm\?cmnd\=Power%20TOGGLE" 
+"~/Dotfiles/Scripts/toggle_hobby_desk.sh"
   Control+Shift+Mod2+Mod4 + 2
 
 # Lock (i3lock-fancy-rapid blurs the background which looks cool)

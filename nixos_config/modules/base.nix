@@ -12,12 +12,22 @@ in
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  networking.networkmanager.enable = true;
+
+  networking = {
+    networkmanager.enable = true;
+    #networkmanager.unmanaged = [ "wlp6s0" ];
+    #networkmanager.logLevel = "DEBUG";
+    wireless.enable = false;
+  };
+
 
   # Enable bluetooth
   hardware.bluetooth.enable = true; # enables support for Bluetooth
   hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
   services.blueman.enable = true;
+
+  # Prevent wakeups
+  #boot.kernelParams = [ "noacpi" ];
 
   # Set your time zone.
   time.timeZone = "Europe/Amsterdam";
