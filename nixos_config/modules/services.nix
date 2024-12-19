@@ -24,11 +24,9 @@ services.udev.extraRules = ''
   users.groups.plugdev = {};
   users.users.${username}.extraGroups = [ "plugdev" ];
 
- services.printing.enable = true;
-  services.printing.drivers = [ pkgs.gutenprint ];
-
   services.openssh = {
     enable = true;
+    ports = [471];
     settings = {
       PermitRootLogin = "no";
       PasswordAuthentication = false;

@@ -197,4 +197,5 @@
   "[nix]": {
     "editor.defaultFormatter": "jnoortheen.nix-ide"
   },
+  "haskell.manageHLS": "GHCup",
 }

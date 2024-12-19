@@ -19,9 +19,11 @@ in
     mkdir -p /home/${username}/.config/polybar
     mkdir -p /home/${username}/.config/kitty
     mkdir -p /home/${username}/.config/picom
+    mkdir -p /home/${username}/.config/nvim
     mkdir -p /home/${username}/.config/Code/User/snippets
 
     # Create symlinks for .config files
+    ln -sf /home/${username}/Dotfiles/.config/nvim /home/${username}/.config/nvim
     ln -sf /home/${username}/Dotfiles/.config/i3/config /home/${username}/.config/i3/config
     ln -sf /home/${username}/Dotfiles/.config/polybar/config.ini /home/${username}/.config/polybar/config.ini
     ln -sf /home/${username}/Dotfiles/.config/kitty/kitty.conf /home/${username}/.config/kitty/kitty.conf

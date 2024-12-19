@@ -13,7 +13,8 @@ alias rm='echo USE RIP INSTEAD'           # rm: interactive; verbose
 alias mkdir='mkdir -pv'     # mkdir: parents; verbose
 
 # Better defaults
-alias ls='ls --color=auto -lAh' 
+alias ls='eza  --no-permissions --octal-permissions -la --git' 
+#alias ls='ls --color=auto -lAh' 
 alias cp="cp -i"                          # confirm before overwriting something
 alias df='df -h'                          # human-readable sizes
 alias free='free -m'                      # show sizes in MB

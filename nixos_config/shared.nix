@@ -19,6 +19,9 @@ in
 {
   imports = moduleImports ++ appimageImports;
   programs.steam.enable = true;
+  
+  programs.nix-ld.enable = true;
+  programs.nix-ld.package = pkgs.nix-ld-rs;
 
   # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
@@ -67,11 +70,13 @@ in
     redshift # Make screen orange
     geoclue2
     killall
-    epson-escpr
-    gutenprint
     traceroute
     rpi-imager
     xdotool
+    bc # Commandline calculator
+    xclip
+    eza # Modern replacement of 'ls' command
+    unzip
 
     # Development tools
     git
@@ -86,6 +91,10 @@ in
     python311Packages.xlib # X11 interface library
     nodejs_18
     nodejs_20
+    julia
+    ghc # haskell
+    esptool
+    nmap
 
     # A bunch of stuff to get prisma to work...
     nodePackages.yarn
@@ -100,6 +109,8 @@ in
     vscode
     nixfmt-rfc-style # Formatter for nix files
     xfce.mousepad
+    neovim
+    tmux
 
     # Web browsers
     firefox
@@ -115,11 +126,14 @@ in
     bambu-studio
   ];
 
-  programs.nix-ld.libraries = with pkgs; [
-    # Add any missing dynamic libraries for unpackages programs here
-    #zlib # Provides 'libz.so.1'
+programs.nix-ld.libraries = with pkgs; [
+    # Add common runtime dependencies here
+    stdenv.cc.cc
+    zlib
+    glib
+    openssl
+    xorg.libXft
   ];
-
   environment.variables = {
     LD_LIBRARY_PATH = "${
       pkgs.lib.makeLibraryPath [

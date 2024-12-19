@@ -13,6 +13,11 @@ in
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  boot.kernelParams = [
+    "mem_sleep_default=deep"
+    "acpi.sleep_rev=0"
+  ];
+
   networking = {
     networkmanager.enable = true;
     #networkmanager.unmanaged = [ "wlp6s0" ];
@@ -68,9 +73,6 @@ in
 
   # Configure console keymap
   console.keyMap = "us";
-
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
 
   # Allow unfree packages
   nixpkgs.config = {
