@@ -25,7 +25,10 @@
   "terminal.integrated.enableMultiLinePasteWarning": false,
   "[python]": {
     "editor.formatOnType": true,
-    "editor.defaultFormatter": "ms-python.black-formatter"
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.codeActionsOnSave": {
+      "source.fixAll.ruff": "explicit"
+    },
   },
   "[vue]": {
     "editor.defaultFormatter": "Vue.volar"
@@ -48,7 +51,7 @@
     "**/*.toc": true
   },
   "github.copilot.enable": {
-    "*": false,
+    "*": true,
     "plaintext": true,
     "markdown": true,
     "scminput": false,
@@ -186,7 +189,7 @@
   "latex-workshop.latex.autoClean.run": "onSucceeded",
   "latex-workshop.latex.recipe.default": "lastUsed",
   "supermaven.enable": {
-    "*": true
+    "*": false
   },
   "prisma.showPrismaDataPlatformNotification": false,
   "editor.wordWrap": "on",
@@ -198,4 +201,33 @@
     "editor.defaultFormatter": "jnoortheen.nix-ide"
   },
   "haskell.manageHLS": "GHCup",
+  "workbench.startupEditor": "none",
+  "terminal.integrated.profiles.windows": {
+    "PowerShell": {
+      "source": "PowerShell",
+      "icon": "terminal-powershell"
+    },
+    "Command Prompt": {
+      "path": [
+        "${env:windir}\\Sysnative\\cmd.exe",
+        "${env:windir}\\System32\\cmd.exe"
+      ],
+      "args": [],
+      "icon": "terminal-cmd"
+    },
+    "Git Bash": {
+      "source": "Git Bash"
+    },
+    "Ubuntu (WSL)": {
+      "path": "C:\\WINDOWS\\System32\\wsl.exe",
+      "args": [
+        "-d",
+        "Ubuntu"
+      ]
+    }
+  },
+  "terminal.integrated.defaultProfile.windows": "Ubuntu (WSL)",
+  "security.allowedUNCHosts": [
+    "wsl.localhost"
+  ],
 }

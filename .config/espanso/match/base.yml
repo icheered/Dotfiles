@@ -19,9 +19,13 @@ matches:
 
   - trigger: ";mail"
     replace: "Tjeerd992@gmail.com"
+  
+  - trigger: ";bsmail"
+    replace: "BakkerSchotanus@gmail.com"
 
   - trigger: ";phone"
     replace: "0613838306"
+
   - trigger: ";addr"
     replace: "Redemptoristenpad 21, 5211 XP 's-Hertogenbosch"
   # And much more! For more information, visit the docs: https://espanso.org/docs/

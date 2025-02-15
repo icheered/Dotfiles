@@ -15,6 +15,10 @@ let
   # Use these for any appimages that you want to be part of the nixos configuration
   # Any single-use appimages or binaries can be run directly and don't have to be declared
   appimageImports = importDir ./appimages;
+
+  # Allow unstable packages
+  unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
+
 in
 {
   imports = moduleImports ++ appimageImports;
@@ -83,6 +87,7 @@ in
     jdk21_headless # Java Development Kit
     python3
     poetry
+    uv
     nodePackages.live-server
     heroku
     gcc
@@ -117,13 +122,15 @@ in
     google-chrome
 
     # Personal
-    ferdium
+    unstable.ferdium
     spotify
     steam
     modrinth-app # Minecraft launcher
     davinci-resolve
     obsidian
     bambu-studio
+    openscad
+    popcorntime
   ];
 
 programs.nix-ld.libraries = with pkgs; [
