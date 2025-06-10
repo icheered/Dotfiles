@@ -230,4 +230,8 @@
   "security.allowedUNCHosts": [
     "wsl.localhost"
   ],
+  "git.confirmSync": false,
+  "supermaven.otherWarning": false,
+  "ruff.organizeImports": false,
+  "debug.inlineValues": "on",
 }

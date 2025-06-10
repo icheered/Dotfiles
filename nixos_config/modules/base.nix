@@ -104,6 +104,13 @@ in
     shell = pkgs.zsh;
   };
 
+  networking.firewall = {
+    enable = true;  # Make sure the firewall is enabled
+    allowedTCPPorts = [ 5173 ];  # Add other ports you want open here too
+    # If you need UDP on this port as well:
+    # allowedUDPPorts = [ 5173 ];
+  };
+
   # Enable firefox
   programs.firefox.enable = true;
 

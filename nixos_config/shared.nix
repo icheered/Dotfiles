@@ -17,13 +17,17 @@ let
   appimageImports = importDir ./appimages;
 
   # Allow unstable packages
-  unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
+  unstable = import <nixos-unstable> {
+    config = {
+      allowUnfree = true;
+    };
+  };
 
 in
 {
   imports = moduleImports ++ appimageImports;
   programs.steam.enable = true;
-  
+
   programs.nix-ld.enable = true;
   programs.nix-ld.package = pkgs.nix-ld-rs;
 
@@ -41,6 +45,7 @@ in
     glib # Includes often-needed dependencies
     variety
     feh
+    libicu-dev # for smapi stardew valley
 
     # Terminal and shell
     kitty
@@ -59,7 +64,7 @@ in
     clipit
     numlockx
     htop
-    nvtopPackages.full
+    #nvtopPackages.full
     tree
     appimage-run # For running AppImages and other applications!
     pulseaudio
@@ -81,13 +86,18 @@ in
     xclip
     eza # Modern replacement of 'ls' command
     unzip
+    nixpkgs-fmt
+    arandr
 
     # Development tools
     git
     jdk21_headless # Java Development Kit
-    python3
+    python3Full
     poetry
-    uv
+    unstable.uv
+    zstd # needed as dependency for pytorch
+    zstd.dev
+    (zstd.override { enableStatic = false; })
     nodePackages.live-server
     heroku
     gcc
@@ -102,12 +112,12 @@ in
     nmap
 
     # A bunch of stuff to get prisma to work...
-    nodePackages.yarn
-    nodePackages_latest.pnpm
-    nodePackages_latest.vercel
-    nodePackages_latest.prisma
-    openssl
-    nodejs_22
+    #nodePackages.yarn
+    #nodePackages_latest.pnpm
+    #nodePackages_latest.vercel
+    #nodePackages_latest.prisma
+    #openssl
+    #nodejs_22
 
     # Text editors and IDEs
     vim
@@ -116,6 +126,7 @@ in
     xfce.mousepad
     neovim
     tmux
+    code-cursor
 
     # Web browsers
     firefox
@@ -125,29 +136,45 @@ in
     unstable.ferdium
     spotify
     steam
-    modrinth-app # Minecraft launcher
+    #modrinth-app # Minecraft launcher
     davinci-resolve
     obsidian
     bambu-studio
     openscad
     popcorntime
+    qbittorrent
+
+    # # Trying to get python to work
+    # glib
+    # zlib
+    # libGL
+    # fontconfig
+    # xorg.libX11
+    # libxkbcommon
+    # freetype
+    # dbus
+    # python312Packages.pyqt5
+    # python312Packages.pyqt6
+    # python312Packages.tkinter
   ];
 
-programs.nix-ld.libraries = with pkgs; [
+  programs.nix-ld.libraries = with pkgs; [
     # Add common runtime dependencies here
     stdenv.cc.cc
     zlib
     glib
     openssl
     xorg.libXft
+    zstd
   ];
   environment.variables = {
-    LD_LIBRARY_PATH = "${
+    ld_library_path = "${
       pkgs.lib.makeLibraryPath [
         pkgs.stdenv.cc.cc.lib
         pkgs.zlib
+        pkgs.zstd
       ]
-    }:$LD_LIBRARY_PATH";
+    }:${pkgs.zstd}/lib:$LD_LIBRARY_PATH";
   };
 
   # Any other configurations that don't fit into specific modules
