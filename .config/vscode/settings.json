@@ -189,7 +189,7 @@
   "latex-workshop.latex.autoClean.run": "onSucceeded",
   "latex-workshop.latex.recipe.default": "lastUsed",
   "supermaven.enable": {
-    "*": false
+    "*": true
   },
   "prisma.showPrismaDataPlatformNotification": false,
   "editor.wordWrap": "on",
@@ -226,7 +226,7 @@
       ]
     }
   },
-  "terminal.integrated.defaultProfile.windows": "Ubuntu (WSL)",
+  "terminal.integrated.defaultProfile.windows": "PowerShell",
   "security.allowedUNCHosts": [
     "wsl.localhost"
   ],
@@ -234,4 +234,21 @@
   "supermaven.otherWarning": false,
   "ruff.organizeImports": false,
   "debug.inlineValues": "on",
+  "[markdown]": {
+    "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
+  },
+  "markdownTitleFormatter.autoFormatOnSave": true,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.expand": false,
+  "explorer.fileNesting.patterns": {
+    "*.ts": "${capture}.test.ts",
+    "*.ts": "${capture}.*.ts",
+    "*.svelte": "${capture}.test.ts",
+    "+*.svelte": "${capture}.test.ts",
+    "*.svelte.ts": "${capture}.*.ts",
+    "*.h": "${capture}.cpp",
+  },
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "zig.zls.enabled": "on"
 }

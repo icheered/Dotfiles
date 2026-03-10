@@ -33,6 +33,13 @@ services.udev.extraRules = ''
     };
   };
 
+  services.zerotierone = {
+    enable = true;
+    joinNetworks = [
+      "45b6e887e2e7b5a5"
+    ];
+  };
+
   systemd.user.services.espanso = {
     description = "Espanso text expander";
     wantedBy = [ "default.target" ];
@@ -41,7 +48,17 @@ services.udev.extraRules = ''
       Restart = "on-failure";
     };
   };
-
+  
+  # Docker
+  virtualisation.docker = {
+    enable = true;
+    #setSocketVariable = true;
+    daemon.settings = {
+      dns = [ "8.8.8.8" "8.8.4.4" ];
+    };
+  };
+  #users.users.tjbakker.extraGroups = [ "docker" ];
+  
   systemd.user.services.stackstorage = {
     description = "StackStorage file sync";
     wantedBy = [ "default.target" ];
@@ -58,6 +75,9 @@ services.udev.extraRules = ''
   environment.variables.PRISMA_QUERY_ENGINE_LIBRARY = "${pkgs.prisma-engines}/lib/libquery_engine.node";
   environment.variables.PRISMA_QUERY_ENGINE_BINARY = "${pkgs.prisma-engines}/bin/query-engine";
   environment.variables.PRISMA_SCHEMA_ENGINE_BINARY = "${pkgs.prisma-engines}/bin/schema-engine";
+
+  # Tailscale (connect to Jonathan MC server)
+  #services.tailscale.enable = true;
 
   # Nautilus audio/video properties
   environment.sessionVariables.GST_PLUGIN_SYSTEM_PATH_1_0 =

@@ -112,6 +112,12 @@
 "wget -O /dev/null http://192.168.5.114/increase"
   Control+Shift+Mod2+Mod4 + 7
 
+"~/Dotfiles/Scripts/desk_sit.sh"
+  Control+Shift+Mod2+Mod4 + 8
+
+"~/Dotfiles/Scripts/desk_stand.sh"
+  Control+Shift+Mod2+Mod4 + 9
+
 "~/Dotfiles/Scripts/./edit_last_whatsapp.sh"
   Control+Shift+Alt + e
 

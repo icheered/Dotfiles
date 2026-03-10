@@ -57,9 +57,9 @@ bindsym $mod+s exec --no-startup-id rofi -modi drun -show drun -display-drun "Ap
                 -columns 2 -padding 30 -hide-scrollbar \
                 -font "Terminus 12"
                 
-bindsym F9 exec --no-startup-id rofi -modi drun -show drun -display-drun "Apps : " -line-padding 4 \
-                -columns 2 -padding 30 -hide-scrollbar \
-                -show-icons -drun-icon-theme "Arc-X-D" -font "Terminus 12"
+#bindsym F9 exec --no-startup-id rofi -modi drun -show drun -display-drun "Apps : " -line-padding 4 \
+#                -columns 2 -padding 30 -hide-scrollbar \
+#                -show-icons -drun-icon-theme "Arc-X-D" -font "Terminus 12"
 
 ## rofi bindings for window menu (two bindings F10/$mod+t)
 
@@ -67,9 +67,9 @@ bindsym $mod+t exec --no-startup-id rofi -show window -display-window "Window : 
                 -lines 10 -padding 50 -hide-scrollbar \
                 -show-icons -drun-icon-theme "Arc-X-D" -font "Terminus 12"
 
-bindsym F10 exec rofi -show window -display-window "Window : " -line-padding 4 \
-                -lines 10 -padding 50 -hide-scrollbar \
-                -show-icons -drun-icon-theme "Arc-X-D" -font "Terminus 12"
+#bindsym F10 exec rofi -show window -display-window "Window : " -line-padding 4 \
+#                -lines 10 -padding 50 -hide-scrollbar \
+#                -show-icons -drun-icon-theme "Arc-X-D" -font "Terminus 12"
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down

@@ -6,7 +6,7 @@ knobs: 2
 layers:
   - buttons:
       - ["mute", "prev", "play", "next"]
-      - ["ctrl-shift-win-1", "ctrl-shift-win-2", "<100>", "<100>"]
+      - ["ctrl-shift-win-1", "ctrl-shift-win-2", "ctrl-shift-win-8", "ctrl-shift-win-9"]
       - ["ctrl-shift-win-3", "f12", "<100>", "ctrl-shift-win-4"]
     knobs:
       - ccw: "volumedown"

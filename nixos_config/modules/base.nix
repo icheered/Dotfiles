@@ -22,9 +22,8 @@ in
     networkmanager.enable = true;
     #networkmanager.unmanaged = [ "wlp6s0" ];
     #networkmanager.logLevel = "DEBUG";
-    wireless.enable = false;
+    #wireless.enable = false;
   };
-
 
   # Enable bluetooth
   hardware.bluetooth.enable = true; # enables support for Bluetooth
@@ -56,11 +55,9 @@ in
     xkb = {
       layout = "us";
     };
-    displayManager.gdm.enable = true;
-    desktopManager.gnome.enable = true;
     windowManager.i3 = {
       enable = true;
-      package = pkgs.i3-gaps;
+      #package = pkgs.i3-raps;
       extraPackages = with pkgs; [
         i3status
         i3lock
@@ -81,7 +78,7 @@ in
   };
 
   # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -100,15 +97,16 @@ in
       "dialout"
       "users"
       "audio"
+      "docker"
     ];
     shell = pkgs.zsh;
   };
 
   networking.firewall = {
-    enable = true;  # Make sure the firewall is enabled
-    allowedTCPPorts = [ 5173 ];  # Add other ports you want open here too
+    enable = true; # Make sure the firewall is enabled
+    allowedTCPPorts = [ 5173 8443 8123 25500 8081 ]; # Add other ports you want open here too
     # If you need UDP on this port as well:
-    # allowedUDPPorts = [ 5173 ];
+    allowedUDPPorts = [ 5173 8443 8123 25500 8081 ];
   };
 
   # Enable firefox
@@ -118,10 +116,15 @@ in
   environment.etc."/nixos/nixos-config/.git".enable = false;
 
   # Enable OpenGL, required for some graphics programs
-  hardware.opengl = {
+  hardware.graphics = {
     enable = true;
     extraPackages = with pkgs; [ rocmPackages.clr.icd ];
   };
+
+  # Add corne keyboard access
+  services.udev.extraRules = ''
+    KERNEL=="hidraw*", ATTRS{idVendor}=="55d4", MODE="0666"
+  '';
 
   # Enable nix-ld
   programs.nix-ld.enable = true;

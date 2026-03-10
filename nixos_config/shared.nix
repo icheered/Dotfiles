@@ -29,7 +29,7 @@ in
   programs.steam.enable = true;
 
   programs.nix-ld.enable = true;
-  programs.nix-ld.package = pkgs.nix-ld-rs;
+  #programs.nix-ld.package = pkgs.nix-ld-rs;
 
   # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
@@ -37,15 +37,15 @@ in
     i3
     i3lock-fancy-rapid
     picom # A compositor that allows transparent windows
-    gnome.gnome-keyring
-    gnome.gnome-tweaks
-    gnome.dconf-editor
+    gnome-keyring
+    gnome-tweaks
+    dconf-editor
     polybarFull
     fuse # Filesystem in Userspace, includes often-needed dependencies
     glib # Includes often-needed dependencies
     variety
     feh
-    libicu-dev # for smapi stardew valley
+    #libicu-dev # for smapi stardew valley
 
     # Terminal and shell
     kitty
@@ -88,28 +88,40 @@ in
     unzip
     nixpkgs-fmt
     arandr
+    ddrescue
+    lazygit
+    pulsemixer
+    lsdvd
+    xfce.thunar
+    xfce.xfconf
 
     # Development tools
     git
     jdk21_headless # Java Development Kit
-    python3Full
     poetry
     unstable.uv
     zstd # needed as dependency for pytorch
     zstd.dev
     (zstd.override { enableStatic = false; })
-    nodePackages.live-server
     heroku
     gcc
     stdenv.cc.cc.lib
     zlib
     python311Packages.xlib # X11 interface library
-    nodejs_18
+    python314
+    #nodejs_18
     nodejs_20
     julia
     ghc # haskell
     esptool
     nmap
+    yarn
+    smartmontools # Monitor HDD health
+    pm2 # Deploy multiple node applications
+    docker-compose
+    android-tools
+    zig
+    blender
 
     # A bunch of stuff to get prisma to work...
     #nodePackages.yarn
@@ -136,13 +148,19 @@ in
     unstable.ferdium
     spotify
     steam
-    #modrinth-app # Minecraft launcher
-    davinci-resolve
+    modrinth-app # Minecraft launcher
+    prismlauncher
+    #davinci-resolve
     obsidian
     bambu-studio
+    orca-slicer
     openscad
     popcorntime
     qbittorrent
+    workrave
+    signal-desktop
+    tailscale
+    xclicker
 
     # # Trying to get python to work
     # glib

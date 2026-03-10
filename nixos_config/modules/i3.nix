@@ -4,17 +4,14 @@
   # Configure X11 and window managers
   services.xserver = {
     enable = true;
-    displayManager.gdm = {
-      enable = true;
-      # Enable dark theme for GDM
-      wayland = true;
-    };
-    desktopManager.gnome.enable = true;
     windowManager.i3.enable = true;
   };
+  services.desktopManager.gnome.enable = true;
+  services.displayManager.gdm.enable = true;
+  services.displayManager.gdm.wayland = true;
 
   # Exclude GNOME Shell and Session
-  environment.gnome.excludePackages = with pkgs.gnome; [
+  environment.gnome.excludePackages = with pkgs; [
     gnome-shell
     gnome-session
   ];
@@ -48,17 +45,19 @@
   # Configure GTK settings for dark theme
   programs.dconf.enable = true;
   services.dbus.packages = [ pkgs.dconf ];
-  
+
   # Set global dark theme preference
-  programs.dconf.profiles.user.databases = [{
-    settings = {
-      "org/gnome/desktop/interface" = {
-        color-scheme = "prefer-dark";
-        gtk-theme = "Arc-Dark";
-        icon-theme = "Arc";
+  programs.dconf.profiles.user.databases = [
+    {
+      settings = {
+        "org/gnome/desktop/interface" = {
+          color-scheme = "prefer-dark";
+          gtk-theme = "Arc-Dark";
+          icon-theme = "Arc";
+        };
       };
-    };
-  }];
+    }
+  ];
 
   # Set GTK3 settings
   environment.etc."gtk-3.0/settings.ini".text = ''
